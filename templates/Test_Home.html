@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Website DO NOT SUBMIT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ddd;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #6c1b1b;
+            color: rgba(255, 255, 255, 0.755);
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        .search-bar {
+            width: 80%;
+            max-width: 1000px;
+            display: flex;
+        }
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #741d1d;
+            color: white;
+            border: 1px solid #741d1d;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #45a049;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #e1e0e0;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .sidebar a {
+            display: block;
+            color: #333;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid #562222;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        .image-box-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, auto);
+            gap: 20px;
+            justify-items: center;
+        }
+        .image-box {
+            text-align: center;
+            max-width: 300px;
+        }
+        .image-box img {
+            width: 300px;
+            height: 180px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .image-box p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="Test_Home.html">
+            <img alt="Qries" src="Test_Photos/Screenshot_2024-05-30_112600-removebg-preview_300x180.png">
+        </a>
+    </header>
+    <nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Sidebar</h3>
+            <a href="Test_Explore.html">Recipes</a>
+            <a href="Test_Support.html">Ingredients</a>
+            <a href="Test_About.html">About</a>
+            <a href="#link4">Link 4</a>
+        </div>
+        <main>
+            <div class="image-box-container">
+                <div class="image-box">
+                    <a href="Burger.html">
+                        <img alt="Burger" src="images/Spaghetti.jpg">
+                    </a>
+                    <p>Burger</p>
+                </div>
+                <div class="image-box">
+                    <a href="Spaghetti.html">
+                        <img alt="Spaghetti" src="Test_Photos/Spaghetti.jpg">
+                    </a>
+                    <p>Spaghetti</p>
+                </div>
+                <div class="image-box">
+                    <a href="Fried_Chicken.html">
+                        <img alt="Fried Chicken" src="Test_Photos/Fried_Chicken.jpg">
+                    </a>
+                    <p>Fried Chicken</p>
+                </div>
+                <div class="image-box">
+                    <a href="Beef_Wellington.html">
+                        <img alt="Beef Wellington" src="Test_Photos/Beef wellington.jpg">
+                    </a>
+                    <p>Beef Wellington</p>
+                </div>
+                <div class="image-box">
+                    <a href="Salmon.html">
+                        <img alt="Salmon" src="Test_Photos/Salmon.jpg">
+                    </a>
+                    <p>Salmon</p>
+                </div>
+                <div class="image-box">
+                    <a href="Mac and Cheese.html">
+                        <img alt="Salad" src="Test_Photos/Mac and Cheese.jpg">        
+                    </a>
+                    <p>Mac and Cheese</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 My Website. All rights

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Website</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #6c1b1b;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            padding: 10px;
+        }
+        .search-bar {
+            width: 80%;
+            max-width: 1000px;
+            display: flex;
+        }
+        .search-bar input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+            font-size: 16px;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #741d1d;
+            color: white;
+            border: 1px solid #741d1d;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        .search-bar button:hover {
+            background-color: #45a049;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .sidebar a {
+            display: block;
+            color: #333;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+        }
+        .sidebar a:hover {
+            background-color: #ddd;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+        }
+        .image-box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+        .image-box {
+            text-align: center;
+            width: 45%;
+            max-width: 300px;
+        }
+        .image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .image-box p {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Test Explore Page</h1>
+    </header>
+    <nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="sidebar">
+            <h3>Sidebar</h3>
+            <a href="#link1">Link 1</a>
+            <a href="#link2">Link 2</a>
+            <a href="#link3">Link 3</a>
+            <a href="#link4">Link 4</a>
+        </div>
+        <main>
+            <div class="image-box-container">
+                <div class="image-box">
+                    <img src="photos/Buger.jpg" alt="Buger">
+                    <p>Image 1 description</p>
+                </div>
+                <div class="image-box">
+                    <img src="photos/spaghetti.jpg" alt="spaghetti">
+                    <p>Image 2 description</p>
+                </div>
+                <div class="image-box">
+                    <img src="photos/beef wellington.jpg" alt="beef wellington">
+                    <p>Image 3 description</p>
+                </div>
+                <div class="image-box">
+                    <img src="image4.jpg" alt="Image 4">
+                    <p>Image 4 description</p>
+                </div>
+            </div>
+        </main>
+        
+    </div>
+    <footer>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </footer>
+</body>
+</html>
