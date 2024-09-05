@@ -1,46 +1,62 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from config import Config
+import sqlite3
+import random
 
-app = Flask(__name__)
+app=Flask(__name__)
+
+
+app.config.from_object(Config)
 
 @app.route('/')
 def home():
-    return render_template('Test_Home.html')
+    conn = sqlite3.connect(app.config['DATABASE'])
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM food;")
+    foods = cur.fetchall()
+    conn.close() 
+    return render_template('home.html',foods=foods)
 
-@app.route('/Test_Explore.html')
-def explore():
-    return render_template('Test_Explore.html')
+@app.route('/foods')
+def all_foods():
+    conn = sqlite3.connect(app.config['DATABASE'])
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM food;")
+    foods = cur.fetchall()
+    conn.close() 
+    return render_template("foods.html" ,foods=foods)
 
-@app.route('/Test_Support.html')
-def support():
-    return render_template('Test_Support.html')
+@app.route('/food_page/<int:id>')
+def food_page(id):
+    conn = sqlite3.connect(app.config['DATABASE'])
+    cur = conn.cursor()
+    cur.execute("select * from food where Food_id= ?;" ,(id,))
+    food = cur.fetchone()
+    cur.execute("""select ingredients."ingredients_discription "  from Food
+                join recipes on recipes.food_id = Food.Food_id
+                join ingredients on ingredients.resipie_id = recipes.id
+                where Food.Food_Id = ?;""",(id,))
+    ingredients= cur.fetchall()
+    conn.close() 
+    return render_template("food_page.html",food=food,ingredients=ingredients)
 
-@app.route('/Test_About.html')
-def about():
-    return render_template('Test_About.html')
+@app.route('/Contact')
+def Contact():
+    conn = sqlite3.connect(app.config['DATABASE'])
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM food;")
+    foods = cur.fetchall()
+    conn.close() 
+    return render_template('Contact.html',foods=foods)
 
-@app.route('/Burger.html')
-def burger():
-    return render_template('Burger.html')
-
-@app.route('/Spaghetti.html')
-def spaghetti():
-    return render_template('Spaghetti.html')
-
-@app.route('/Fried_Chicken.html')
-def fried_chicken():
-    return render_template('Fried_Chicken.html')
-
-@app.route('/Beef_Wellington.html')
-def beef_wellington():
-    return render_template('Beef_Wellington.html')
-
-@app.route('/Salmon.html')
-def salmon():
-    return render_template('Salmon.html')
-
-@app.route('/Mac_and_Cheese.html')
-def mac_and_cheese():
-    return render_template('Mac_and_Cheese.html')
+@app.route('/About')
+def About():
+    conn = sqlite3.connect(app.config['DATABASE'])
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM food;")
+    foods = cur.fetchall()
+    conn.close() 
+    return render_template("About.html" ,foods=foods)
 
 if __name__ == '__main__':
     app.run(debug=True)

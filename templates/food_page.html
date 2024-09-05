@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+
+
+
+ {% block content %}
+
+ <div class="food-image">
+    <h2>{{ food[7] }}</h2>
+
+    <img alt="Qries" src="../{{ food[4] }}">
+    </a>
+ </div>
+
+   
+ <ul class="ingredient">
+   <h1>{{ food[1] }}</h1>
+   <h2>Ingredients</h2>
+ {% for ingredient in ingredients %} 
+ <li>{{ingredient[0]}}</li>
+  {% endfor %}
+</ul>
+
+ {% endblock %}

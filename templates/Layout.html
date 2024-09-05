@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/css/main.css"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Food Shack  </title>
+</head>
+<body>
+
+
+    {% include 'header.html' %}
+    <div class="container">
+        <div class="sidebar">
+            <h3>Sidebar</h3>
+            <a href="../foods">All Recipes</a>
+            <a href="../About">About</a>
+            <a href="../Contact">Contact Me</a>
+        </div>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 My Website. All rights to Mr William John Roden Plimmer 

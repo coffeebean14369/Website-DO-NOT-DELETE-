@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+
+ {% block content %}
+ 
+ <main>
+  <div class="image-box-container">
+       
+       {% for food in foods %} 
+       <div class="image-box">
+          <h2>{{ food[1] }}</h2>
+          <a href="food_page/{{food[0]}}"> 
+            <img alt="Qries" src="{{ food[4] }}">
+            </a>
+              <div class="food discription">
+                <P>
+                  {{ food[3] }}
+                </P>
+              </div>
+        </div>
+        {% endfor %}
+  </div>
+</main>
+ 
+
+   
+
+ {% endblock %}
