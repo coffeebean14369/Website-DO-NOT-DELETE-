@@ -32,10 +32,10 @@ def food_page(id):
     cur = conn.cursor()
     cur.execute("select * from food where Food_id= ?;" ,(id,))
     food = cur.fetchone()
-    cur.execute("""select ingredients."ingredients_discription "  from Food
-                join recipes on recipes.food_id = Food.Food_id
+    cur.execute("""select ingredients."ingredients_discription "  from food
+                join recipes on recipes.food_id = food.Food_id
                 join ingredients on ingredients.resipie_id = recipes.id
-                where Food.Food_Id = ?;""",(id,))
+                where food.food_Id = ?;""",(id,))
     ingredients= cur.fetchall()
     conn.close() 
     return render_template("food_page.html",food=food,ingredients=ingredients)
